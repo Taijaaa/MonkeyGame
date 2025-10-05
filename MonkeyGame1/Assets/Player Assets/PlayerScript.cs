@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float moveStepY = 2f;
-    public float moveStepX = 2f;
-    public float minY = -4f;
-    public float maxY = 4f;
-    public float minX = -4f;
-    public float maxX = 4f;
+    public float moveStepY = 5f;
+    public float moveStepX = 6f;
+    public float minY = 0f;
+    public float maxY = 15f;
+    public float minX = -12f;
+    public float maxX = 16f;
 
     void Update()
     {
