@@ -13,11 +13,8 @@ public class MainMenu : MonoBehaviour
 
 
     void Update()
-    {
-        void Update()
-        {
-            
-            if (Input.GetKeyDown(KeyCode.S))
+    {       
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 SceneManager.LoadScene("Gameplay");
             }
@@ -27,7 +24,6 @@ public class MainMenu : MonoBehaviour
             {
                 SceneManager.LoadScene("InformationScreen");
             }
-        }
     }
 }
 
