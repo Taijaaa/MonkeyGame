@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     public float minX = -12f;
     public float maxX = 16f;
 
+    private int lives = 3;
+
     void Update()
     {
         Vector3 pos = transform.position;
@@ -44,5 +46,20 @@ public class PlayerScript : MonoBehaviour
         }
 
         transform.position = pos;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coconut"))
+        {
+            Destroy(collision.gameObject);
+            lives--;
+            Debug.Log("Lives left: " + lives);
+
+            if (lives <= 0)
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+        }
     }
 }
