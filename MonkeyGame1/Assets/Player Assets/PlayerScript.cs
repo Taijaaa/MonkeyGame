@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour
     public float maxX = 16f;
 
     private int lives = 3;
+    private int collectedBananas = 0;
+    public int maxBananas = 10;
 
     void Update()
     {
@@ -59,6 +61,17 @@ public class PlayerScript : MonoBehaviour
             if (lives <= 0)
             {
                 SceneManager.LoadScene("LoseScreen");
+            }
+        }
+        if (collision.gameObject.CompareTag("Banana"))
+        {
+            Destroy(collision.gameObject);
+            collectedBananas++;
+            Debug.Log("Bananas Collected: " + maxBananas);
+
+            if (collectedBananas >= maxBananas)
+            {
+                SceneManager.LoadScene("WinScreen");
             }
         }
     }
