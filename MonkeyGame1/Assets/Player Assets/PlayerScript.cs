@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -12,6 +13,13 @@ public class PlayerScript : MonoBehaviour
     public int bananas = 0;
 
     private int lives = 3;
+
+    public TextMeshProUGUI livesText;
+
+    void Start()
+    {
+        UpdateLivesText();
+    }
 
     void Update()
     {
@@ -55,6 +63,7 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             lives--;
+            UpdateLivesText();
             Debug.Log("Lives left: " + lives);
 
             if (lives <= 0)
@@ -77,6 +86,12 @@ public class PlayerScript : MonoBehaviour
                 SceneManager.LoadScene("WinScreen");
             }
         }
+    }
+
+    private void UpdateLivesText()
+    {
+        if (livesText != null)
+            livesText.text = "Lives: " + lives;
     }
 
 
