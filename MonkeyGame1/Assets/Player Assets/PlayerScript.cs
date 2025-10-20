@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -9,8 +10,16 @@ public class PlayerScript : MonoBehaviour
     public float maxY = 15f;
     public float minX = -12f;
     public float maxX = 16f;
+    public int bananas = 0;
 
     private int lives = 3;
+
+    public TextMeshProUGUI livesText;
+
+    void Start()
+    {
+        UpdateLivesText();
+    }
 
     void Update()
     {
@@ -54,6 +63,7 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             lives--;
+            UpdateLivesText();
             Debug.Log("Lives left: " + lives);
 
             if (lives <= 0)
@@ -61,5 +71,29 @@ public class PlayerScript : MonoBehaviour
                 SceneManager.LoadScene("LoseScreen");
             }
         }
+
     }
+  private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Banana"))
+        {
+            Destroy(other.gameObject);
+            bananas++;
+            Debug.Log("banana: " + bananas);
+
+            if (bananas >= 30000000)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
+        }
+    }
+
+    private void UpdateLivesText()
+    {
+        if (livesText != null)
+            livesText.text = "Lives: " + lives;
+    }
+
+
+
 }
