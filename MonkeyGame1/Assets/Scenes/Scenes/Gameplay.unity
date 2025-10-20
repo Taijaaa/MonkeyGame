@@ -157,6 +157,57 @@ Transform:
   - {fileID: 296854447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &47624226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47624228}
+  - component: {fileID: 47624227}
+  m_Layer: 0
+  m_Name: BananaDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &47624227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47624226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6a41e3e9e4ae74b9bc77998df2c62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSpots: []
+  bananaPrefab: {fileID: 0}
+  goldenBananaPrefab: {fileID: 0}
+  spawnEverySeconds: 1.2
+  goldenChance: 0.12
+  stormBananasPerTick: 5
+  stormDuration: 3
+--- !u!4 &47624228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47624226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4419565, y: 7.504938, z: -0.0905149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290249005
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +767,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &630199580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630199581}
+  m_Layer: 0
+  m_Name: Banana Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &630199581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630199580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4050243, y: 2.456882, z: -0.1736953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &783963464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1498,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a88f9003a51b7b4abea38459bc854c9, type: 3}
+--- !u!1001 &5969578157468215420
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3303468507459630766, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_Name
+      value: Banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716985673766929041, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.321672
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.005142
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251998266657110935, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f49d7ec2d630144abf899d01a019df1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1426,3 +1569,6 @@ SceneRoots:
   - {fileID: 451871724241173081}
   - {fileID: 1199661385}
   - {fileID: 35726124}
+  - {fileID: 47624228}
+  - {fileID: 5969578157468215420}
+  - {fileID: 630199581}
