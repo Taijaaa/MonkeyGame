@@ -1,20 +1,28 @@
 using UnityEngine;
+using TMPro;
 
 public class BananaPickup : MonoBehaviour
 {
-    // how many points this banana gives (golden = 5, normal = 1)
     public int points = 1;
-
-    // super simple static score counter (replace later with your actual score system)
     public static int Score = 0;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // make sure it’s the player grabbing the banana
-        if (!other.CompareTag("Player")) return;
+    // Use TextMeshProUGUI for UI Text on Canvas
+    public TextMeshProUGUI scoreText;
 
-        // give points and destroy the banana
+    // COLLISION VERSION: both colliders are NOT triggers
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Player")) return;
+
         Score += points;
+        updateScoreText();
         Destroy(gameObject);
+    }
+
+
+    void updateScoreText()
+    {
+        if (scoreText != null)
+            scoreText.text = "Bananas: " + Score;
     }
 }

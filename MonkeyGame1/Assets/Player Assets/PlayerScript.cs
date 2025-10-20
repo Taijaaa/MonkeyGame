@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     public float maxY = 15f;
     public float minX = -12f;
     public float maxX = 16f;
+    public int bananas = 0;
 
     private int lives = 3;
 
@@ -61,5 +62,23 @@ public class PlayerScript : MonoBehaviour
                 SceneManager.LoadScene("LoseScreen");
             }
         }
+
     }
+  private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Banana"))
+        {
+            Destroy(other.gameObject);
+            bananas++;
+            Debug.Log("banana: " + bananas);
+
+            if (bananas >= 30000000)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
+        }
+    }
+
+
+
 }
