@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
 
             if (pos.y < minY)
             {
-                SceneManager.LoadScene("LoseScreen");
+                SceneManager.LoadScene("HighScoreScene");
                 return;
             }
         }
@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
 
             if (lives <= 0)
             {
-                SceneManager.LoadScene("LoseScreen");
+                SceneManager.LoadScene("HighScoreScene");
             }
         }
 
