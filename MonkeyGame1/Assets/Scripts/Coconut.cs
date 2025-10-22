@@ -7,7 +7,7 @@ public class Coconut : MonoBehaviour
 
     public GameObject coconutPrefab;
     public Transform[] spawnPoints;
-    public float minDelay = 1f;
+    public float minDelay = 1.5f;
     public float maxDelay = 4f;
     public float resetY = -6f;
     public float gravityScale = 3f;
@@ -38,7 +38,7 @@ public class Coconut : MonoBehaviour
     {
         for (int i = 0; i < coconuts.Length; i++)
         {
-            if (coconuts[i] == null) continue;
+            if (coconuts[i] == null) SpawnOne(i);
 
             timers[i] += Time.deltaTime;
 
@@ -53,7 +53,6 @@ public class Coconut : MonoBehaviour
             if (coconuts[i].transform.position.y < resetY)
             {
                 Destroy(coconuts[i]);
-                SpawnOne(i);
             }
         }
 

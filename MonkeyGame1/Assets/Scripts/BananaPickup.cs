@@ -1,28 +1,33 @@
 using UnityEngine;
-using TMPro;
 
 public class BananaPickup : MonoBehaviour
 {
-    public int points = 1;
-    public static int Score = 0;
+    [Header("Banana Settings")]
+    public int points = 1;       // normal banana = 1, golden = more
 
-    // Use TextMeshProUGUI for UI Text on Canvas
-    public TextMeshProUGUI scoreText;
+    [Header("Pickup Settings")]
+    public bool isGolden = false;
+    public AudioClip pickupSound;
 
-    // COLLISION VERSION: both colliders are NOT triggers
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (!collision.collider.CompareTag("Player")) return;
-
-        Score += points;
-        updateScoreText();
-        Destroy(gameObject);
+        if (isGolden)
+            points = 3; // bonus for golden bananas
     }
 
-
-    void updateScoreText()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (scoreText != null)
-            scoreText.text = "Bananas: " + Score;
+        if (!collision.CompareTag("Player")) return;
+
+        // Add points through ScoreManager
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.AddPoints(points);
+
+        // Play sound if assigned
+        if (pickupSound)
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+
+        // Destroy collected banana
+        Destroy(gameObject);
     }
 }

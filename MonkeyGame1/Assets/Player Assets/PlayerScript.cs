@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
 
             if (pos.y < minY)
             {
-                SceneManager.LoadScene("HighScoreScene");
+                SceneManager.LoadScene("Gameplay");
                 return;
             }
         }
@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
-  private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Banana"))
         {
@@ -81,7 +81,7 @@ public class PlayerScript : MonoBehaviour
             bananas++;
             Debug.Log("banana: " + bananas);
 
-            if (bananas >= 30000000)
+            if (bananas >= 3000)
             {
                 SceneManager.LoadScene("WinScreen");
             }
