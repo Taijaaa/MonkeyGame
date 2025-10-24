@@ -25,7 +25,7 @@
 
 * Arrow keys to move left, right, up and down 
 
-![A screenshot of a video gameAI-generated content may be incorrect.][image1] 
+[![A screenshot of a video gameAI-generated content may be incorrect.][image1] ](https://imgur.com/a/FiRfJhe)
 
 **Visual Style**: 2D visual game set in a jungle 
 
@@ -65,7 +65,7 @@ Player has three lives, coconuts are the obstacle to avoid while jumping, timing
 
 Our objective is to see how much challenge and engagement can be created within a fixed screen level using vertical platforming, random object appearances and proper spatial design. We are trying to prove that a single-fixed screen can function just as well as a side scrolling level when player/item movement and platform spacing is designed thoughtfully. 
 
-![A screenshot of a gameAI-generated content may be incorrect.][image2] 
+[![A screenshot of a gameAI-generated content may be incorrect.][image2] ](https://imgur.com/vw7IrVw)
 
  
 
